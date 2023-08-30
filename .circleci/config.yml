@@ -29,8 +29,9 @@ jobs:
             --disable-swift \
             --build_only_specified_archs \
             --out build
+      - run: cd build && tar -cvf opencv2.xcframework.tar opencv2.xcframework
       - store_artifacts:
-          path: ./build
+          path: ./build/opencv2.xcframework.tar
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
